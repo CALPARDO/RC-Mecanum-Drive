@@ -28,7 +28,7 @@ Servo M_4;
 const int ch_xP = 1; // Horizontal Input
 const int ch_yP = 2; // Vertical Input
 const int ch_trP = 3; // Turn round in constant refrence point
-const int ch_emP = 1; // Emergency Switch
+const int ch_emP = 4; // Emergency Switch
 
 // Setup
 void setup() {
