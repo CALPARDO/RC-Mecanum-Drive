@@ -7,8 +7,8 @@
 int s_func;
 
 // Mapping Constants
-const int cur_min = 1000; // Unknown
-const int cur_max = 2000; // Unknown
+const int cur_min = 1000; // 1000 is the min value of FS-IA6B Receiver
+const int cur_max = 2000; // 2000 is the min value of FS-IA6B Receiver
 const int tar_min = 0; // 0 means CCW full throttle
 const int tar_max = 180; // 180 means CW full throttle
 
