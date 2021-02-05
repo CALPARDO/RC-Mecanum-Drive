@@ -7,16 +7,16 @@
 int s_func;
 
 // Mapping Constants
-const int cur_min = -1000; // Unknown
-const int cur_max = 1000; // Unknown
+const int cur_min = 1000; // Unknown
+const int cur_max = 2000; // Unknown
 const int tar_min = 0; // 0 means CCW full throttle
 const int tar_max = 180; // 180 means CW full throttle
 
 // Motors
-const int M_1P = 13; // Motor 1 (Front Left)
-const int M_2P = 12; // Motor 2 (Front Right)
-const int M_3P = 11; // Motor 3 (Rear Left)
-const int M_4P = 10; // Motor 4 (Rear Right)
+const int M_1P = 4; // Motor 1 (Front Left)
+const int M_2P = 5; // Motor 2 (Front Right)
+const int M_3P = 6; // Motor 3 (Rear Left)
+const int M_4P = 7; // Motor 4 (Rear Right)
 
 // Motors like Servos
 Servo M_1;
@@ -25,10 +25,10 @@ Servo M_3;
 Servo M_4;
 
 // Receiver Inputs
-const int ch_xP = 1; // Horizontal Input
-const int ch_yP = 2; // Vertical Input
-const int ch_trP = 3; // Turn round in constant refrence point
-const int ch_emP = 4; // Emergency Switch
+const int ch_xP = 10; // Horizontal Input
+const int ch_yP = 11; // Vertical Input
+const int ch_trP = 12; // Turn round in constant refrence point
+const int ch_emP = 13; // Emergency Switch
 
 // Setup
 void setup() {
@@ -68,7 +68,7 @@ void loop() {
   ch_em = map(ch_em, cur_min, cur_max, tar_min, tar_max);
   
   // Moving Right
-  if (ch_x > 90){
+  if (ch_x > 95){
     M_1.write(180-ch_x); // CCW
     M_2.write(180-ch_x); // CCW
     M_3.write(ch_x); // CW
@@ -76,7 +76,7 @@ void loop() {
     }
 
   // Moving Left
-  else if (ch_x < 90){
+  else if (ch_x < 85){
     M_1.write(ch_x); // CW
     M_2.write(180-ch_x); // CCW
     M_3.write(180-ch_x); // CCW
@@ -84,7 +84,7 @@ void loop() {
     }
 
   // Moving Forward
-  else if (ch_y > 90){
+  else if (ch_y > 95){
     M_1.write(ch_y); // CW
     M_2.write(180-ch_y); // CCW
     M_3.write(ch_y); // CW
@@ -92,7 +92,7 @@ void loop() {
     }
 
   // Moving Backward
-  else if (ch_y < 90){
+  else if (ch_y < 85){
     M_1.write(180-ch_y); // CCW
     M_2.write(ch_y); // CW
     M_3.write(180-ch_y); // CCW
@@ -108,7 +108,7 @@ void loop() {
     }
 
   // Turning Left
-  else if (ch_tr < 90){
+  else if (ch_tr < 85){
     M_1.write(ch_tr); // CW
     M_2.write(ch_tr); // CW
     M_3.write(ch_tr); // CW
@@ -116,7 +116,7 @@ void loop() {
     }
     
   // Emergency Switch ON
-  else if (ch_em > 90){
+  else if (ch_em > 95){
     s_func = M_STOP();
     }
 
@@ -126,9 +126,9 @@ void loop() {
     }
     
   // Printing
-  Serial.println(" ch_x: "+ch_x);
-  Serial.println(" ch_y: "+ch_y);
-  Serial.println(" ch_tr: "+ch_tr);
-  Serial.println(" ch_em: "+ch_em);
+  Serial.println(ch_x);
+  Serial.println(ch_y);
+  Serial.println(ch_tr);
+  Serial.println(ch_em);
 
 }
