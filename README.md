@@ -10,8 +10,8 @@ Change the following lines to define the minimum and the maximum value that you 
 
 ```bash
 // Mapping Constants
-const int cur_min = -1000; // Change -1000
-const int cur_max = 1000; // Change 1000
+const int cur_min = 1000; // Change 1000 (1000 is the min value of FS-IA6B Receiver)
+const int cur_max = 2000; // Change 2000 (2000 is the max value of FS-IA6B Receiver)
 const int tar_min = 0; // 0 means CCW full throttle
 const int tar_max = 180; // 180 means CW full throttle
 ```
