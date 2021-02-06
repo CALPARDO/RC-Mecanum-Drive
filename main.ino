@@ -24,7 +24,7 @@ Servo M_2;
 Servo M_3;
 Servo M_4;
 
-// Receiver Inputs
+// Receiver Input Pıns
 const int ch_xP = 10; // Horizontal Input
 const int ch_yP = 11; // Vertical Input
 const int ch_trP = 12; // Turn round
