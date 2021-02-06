@@ -18,7 +18,7 @@ const int M_2P = 5; // Motor 2 (Front Right)
 const int M_3P = 6; // Motor 3 (Rear Left)
 const int M_4P = 7; // Motor 4 (Rear Right)
 
-// Motors like Servos
+// Motors
 Servo M_1;
 Servo M_2;
 Servo M_3;
